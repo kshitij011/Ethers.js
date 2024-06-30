@@ -6,6 +6,9 @@ const provider = new JsonRpcProvider(`https://mainnet.infura.io/v3/fb12722ef1174
 async function getBlock(){
     const block = await provider.getBlockNumber();
     console.log("Current Block Number:", block);
+
+    const balance = await provider.getBalance("0x33D0e2b5105a3267326b18B599bd57e6349F57b6");
+    console.log("Account balance: ", balance);
 }
 
 getBlock();
