@@ -25,6 +25,6 @@ contract wallet {
     }
 
     function accountBalance(address _address) public view returns (uint) {
-        return (address).balance;
+        return (_address).balance;
     }
 }
