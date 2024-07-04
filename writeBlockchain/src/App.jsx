@@ -116,9 +116,15 @@ function App() {
       // }
 
       await provider.send("eth_requestAccounts", []);
-      const signer = await ethers.provider.getSigner();
-      const contract = new ethers.Contract(contractAddress, contractABI, provider);
-      await contract.setValue(2);
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(contractAddress, contractABI, signer);
+      // await contract.setValue(2);
+
+      // sending eth to contract
+      // await contract.sendEthContract({value: ethers.parseEther("0.1")});
+
+      //receiving or sending ETH from contract to wallet address
+      await contract.sendEthUser("0x33D0e2b5105a3267326b18B599bd57e6349F57b6", {value: ethers.parseEther("0.1"),});   // also need to specify the value which is to be sent
     }
     writeContract();
   }, []);
