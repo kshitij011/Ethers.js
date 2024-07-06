@@ -124,7 +124,9 @@ function App() {
       // await contract.sendEthContract({value: ethers.parseEther("0.1")});
 
       //receiving or sending ETH from contract to wallet address
-      await contract.sendEthUser("0x33D0e2b5105a3267326b18B599bd57e6349F57b6", {value: ethers.parseEther("0.1"),});   // also need to specify the value which is to be sent
+      // 0x33D0e2b5105a3267326b18B599bd57e6349F57b6
+      // 0x8C937303351Bc71fe685aC90878E57E7D68cfe12
+      await contract.sendEthUser("0x33D0e2b5105a3267326b18B599bd57e6349F57b6", {value: ethers.parseEther("0.1")});   // also need to specify the value which is to be sent
     }
     writeContract();
   }, []);
